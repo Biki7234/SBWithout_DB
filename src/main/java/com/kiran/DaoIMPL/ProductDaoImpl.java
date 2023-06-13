@@ -57,5 +57,35 @@ public class ProductDaoImpl implements ProductDao{
 		return pp;
 	}
 
+	@Override
+
+		public boolean deleteProductById(String productId) {
+			boolean isDeleted = false;
+			for (Product dbproduct : pp) {
+				if (dbproduct.getProductId().equals(productId)) {
+					pp.remove(dbproduct);
+					isDeleted = true;
+					break;
+					}
+			}
+			return isDeleted;
+		
+	}
+
+	@Override
+	public boolean updateProduct(Product product) {
+		boolean isUpdated = false;
+		for (Product dbproduct : pp) {
+			if (dbproduct.getProductId().equals(product.getProductId())) {
+				pp.set(pp.indexOf(dbproduct), product);
+				isUpdated = true;
+				break;
+			}
+		}
+
+		return isUpdated;
+
+	}
+
 	
 }

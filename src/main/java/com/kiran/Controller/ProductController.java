@@ -1,4 +1,4 @@
-package com.kiranController;
+package com.kiran.Controller;
 
 import java.util.List;
 

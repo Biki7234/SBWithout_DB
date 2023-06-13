@@ -24,9 +24,14 @@ public class ProductController {
 	public boolean saveproduct(@RequestBody Product product) {
 		return service.saveproduct(product);
 	}
-	@GetMapping("/getproduct/{ID}")
-	public Product  getproductById(@PathVariable("Id" ) String  Id ) {
-		return service.getproductById(Id);
+	@GetMapping("/getproduct/{Id}")
+	public Object  getproductById(@PathVariable("Id" ) String  Id ) {
+		Product product=service.getproductById(Id);
+		if(product!=null){
+			return product;
+		}else {
+			return "Not Found";
+			}
 		
 	}
 	@GetMapping("/getallproduct")

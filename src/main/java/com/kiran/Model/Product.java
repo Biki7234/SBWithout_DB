@@ -8,13 +8,13 @@ package com.kiran.Model;
 		private int supplierId;
 		private int categoryId;
 		private int productQTY;
-		private int productPrice;
+		private double productPrice;
 
 		public Product() {
 		}
 
 		public Product(String productId, String productName, int supplierid, int categoryid, int productQTY,
-				int productPrice) {
+				double productPrice) {
 			super();
 			this.productId = productId;
 			this.productName = productName;
@@ -64,7 +64,7 @@ package com.kiran.Model;
 			this.productQTY = productQTY;
 		}
 
-		public int getProductPrice() {
+		public double getProductPrice() {
 			return productPrice;
 		}
 
